@@ -388,7 +388,11 @@ body { background: var(--white); }
   padding-top: 125px;
 }
 
-.hero-title { margin-bottom: 20px; }
+.hero-title {
+  margin-bottom: 20px;
+  white-space: normal; /* Prevents the text from wrapping to a new line */
+  font-size: calc(27px + 1.8vw); /* Slightly reduced responsive scaling */
+}
 
 .hero-text {
   color: var(--white);
@@ -1324,4 +1328,33 @@ address {
 .animated-image.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+
+/* Map Container Styles */
+.map-container {
+  height: 300px; /* Adjusted for a more rectangular appearance */
+  border-radius: 15px; /* Applied border-radius */
+  overflow: hidden;   /* Ensures the iframe respects the border-radius */
+  margin: 20px auto; /* Adds some spacing and centers if block */
+  width: 90%; /* Or a specific width like 800px, adjust as needed */
+  max-width: 800px; /* Ensures it doesn't get too wide on large screens */
+  /* Optional: adds a subtle border */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0; /* Removes default iframe border */
+}
+
+/* Responsive adjustments for the map */
+@media (max-width: 768px) {
+  .map-container {
+    height: 250px; /* Adjust height for smaller screens */
+    width: 95%;
+    border-radius: 10px;
+  }
 }
